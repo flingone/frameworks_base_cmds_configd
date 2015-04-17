@@ -11,6 +11,7 @@
 #include "json/json.h"
 #include "controller/ScreenScaler.h"
 #include "controller/UsbController.h"
+#include "controller/InputEventHander.h"
 
 #include <unistd.h>
 #include <errno.h>
@@ -159,6 +160,19 @@ void ConfigDaemon::onMessageReceived(ClientSocket *client, string message) {
 						LOGD("ConfigDaemon handle "
 								"command[\"set scale\"], ratio = %d", ratio);
 						ScreenScaler::getInstance()->SetScale(ratio);
+					}
+				}
+			} else if (command == "input_event") {
+				Json::Value params = msgV1->GetData()["parameters"];
+				if (params != Json::Value::null) {
+					if (params["type"] != Json::Value::null
+							&& params["code"] != Json::Value::null
+							&& params["value"] != Json::Value::null) {
+						unsigned int type = params["type"].asUInt();
+						unsigned int code = params["code"].asUInt();
+						unsigned int value = params["value"].asUInt();
+						InputEventHander::sendEvent("/dev/input/event0", type,
+								code, value);
 					}
 				}
 			} else if (command == "set_usb_mode") {
