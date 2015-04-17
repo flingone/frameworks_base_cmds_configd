@@ -13,6 +13,7 @@ LOCAL_SRC_FILES:= src/main.cpp \
 	src/json/json_writer.cpp \
 	src/controller/ScreenScaler.cpp \
 	src/controller/UsbController.cpp \
+	src/controller/InputEventHandler.cpp \
 	src/platform/PropertyManager.cpp \
 	src/common/Logger.cpp \
 	src/common/FsUtils.cpp \

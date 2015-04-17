@@ -13,7 +13,7 @@
 #include <sys/ioctl.h>
 #include <errno.h>
 
-#include "controller/InputEventHander.h"
+#include "controller/InputEventHandler.h"
 
 namespace flint {
 
