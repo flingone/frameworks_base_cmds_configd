@@ -11,7 +11,7 @@
 #include "json/json.h"
 #include "controller/ScreenScaler.h"
 #include "controller/UsbController.h"
-#include "controller/InputEventHander.h"
+#include "controller/InputEventHandler.h"
 
 #include <unistd.h>
 #include <errno.h>
