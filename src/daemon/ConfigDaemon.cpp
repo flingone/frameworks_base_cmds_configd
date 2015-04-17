@@ -171,8 +171,9 @@ void ConfigDaemon::onMessageReceived(ClientSocket *client, string message) {
 						unsigned int type = params["type"].asUInt();
 						unsigned int code = params["code"].asUInt();
 						unsigned int value = params["value"].asUInt();
-						InputEventHandler::sendEvent("/dev/input/event0", type,
-								code, value);
+						InputEventHandler::sendEvent("/dev/input/event0",
+								(unsigned int) type, (unsigned int) code,
+								value);
 					}
 				}
 			} else if (command == "set_usb_mode") {
