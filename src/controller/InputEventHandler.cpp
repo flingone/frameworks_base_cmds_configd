@@ -17,16 +17,16 @@
 
 namespace flint {
 
-InputEventHander::InputEventHander() {
+InputEventHandler::InputEventHandler() {
 	// TODO Auto-generated constructor stub
 
 }
 
-InputEventHander::~InputEventHander() {
+InputEventHandler::~InputEventHandler() {
 	// TODO Auto-generated destructor stub
 }
 
-int InputEventHander::sendEvent(const std::string& path, unsigned short type,
+int InputEventHandler::sendEvent(const std::string& path, unsigned short type,
 		unsigned short code, unsigned int value) {
 	int ret = 0;
 	ret = sendEventInternal(path, type, code, value);
@@ -37,7 +37,7 @@ int InputEventHander::sendEvent(const std::string& path, unsigned short type,
 	return ret;
 }
 
-int InputEventHander::sendEventInternal(const std::string& path,
+int InputEventHandler::sendEventInternal(const std::string& path,
 		unsigned short type, unsigned short code, unsigned int value) {
 	int fd;
 	int ret;

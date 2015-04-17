@@ -19,12 +19,12 @@ struct input_event {
 	unsigned int value;
 };
 
-class InputEventHander {
+class InputEventHandler {
 public:
-	virtual ~InputEventHander();
+	virtual ~InputEventHandler();
 
 private:
-	InputEventHander();
+	InputEventHandler();
 	static int sendEventInternal(const std::string& path, unsigned short type,
 			unsigned short code, unsigned int value);
 
