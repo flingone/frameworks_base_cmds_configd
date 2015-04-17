@@ -171,7 +171,7 @@ void ConfigDaemon::onMessageReceived(ClientSocket *client, string message) {
 						unsigned int type = params["type"].asUInt();
 						unsigned int code = params["code"].asUInt();
 						unsigned int value = params["value"].asUInt();
-						InputEventHander::sendEvent("/dev/input/event0", type,
+						InputEventHandler::sendEvent("/dev/input/event0", type,
 								code, value);
 					}
 				}
