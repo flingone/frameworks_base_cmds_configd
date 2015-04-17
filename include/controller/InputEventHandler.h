@@ -10,8 +10,6 @@
 
 #include <string>
 
-namespace flint {
-
 struct input_event {
 	struct timeval time;
 	unsigned short type;
@@ -33,5 +31,4 @@ public:
 			unsigned short code, unsigned int value);
 };
 
-} /* namespace flint */
 #endif /* INPUTEVENTHANDER_H_ */
