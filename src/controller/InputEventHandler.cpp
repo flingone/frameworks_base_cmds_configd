@@ -15,8 +15,6 @@
 
 #include "controller/InputEventHandler.h"
 
-namespace flint {
-
 InputEventHandler::InputEventHandler() {
 	// TODO Auto-generated constructor stub
 
@@ -62,5 +60,3 @@ int InputEventHandler::sendEventInternal(const std::string& path,
 	}
 	return 0;
 }
-
-} /* namespace flint */
